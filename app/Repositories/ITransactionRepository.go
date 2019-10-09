@@ -5,6 +5,6 @@ import (
 )
 
 type ITransactionRepository interface {
-	ConvertToTransactionEntity(transactions *[]*Entities.TransactionEntity) error
+	ConvertToTransactionEntity(transactions *[]*Entities.TransactionEntity)
 	GetSourceDestination() string
 }

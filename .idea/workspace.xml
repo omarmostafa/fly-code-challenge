@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8a862bd-53e2-48a3-b621-747e40a5d054" name="Default Changelist" comment="" />
+    <list default="true" id="c8a862bd-53e2-48a3-b621-747e40a5d054" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Errors/ValidationError.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContainer.go" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContainer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/FilterEntity.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/FilterEntity.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/TransactionEntity.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/TransactionEntity.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Handlers/FilterHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Handlers/FilterHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Handlers/ProviderHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Handlers/ProviderHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/FlyARepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FlyARepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/FlyBRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FlyBRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ITransactionRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ITransactionRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/PaymentController.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PaymentController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/PaymentService.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/PaymentService.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,18 +30,22 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1Rhml5x1vhn4pPZcUmhnMGVAQiR" />
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Handlers" />
-    <property name="settings.editor.selected.configurable" value="go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -55,6 +73,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

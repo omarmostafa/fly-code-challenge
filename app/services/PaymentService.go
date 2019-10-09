@@ -6,23 +6,26 @@ import (
 )
 
 type PaymentService struct {
+	providerHandler *Handlers.ProviderHandler
 }
 
-
-func NewPaymentService()  *PaymentService{
+func NewPaymentService(handler *Handlers.ProviderHandler) *PaymentService {
 	return &PaymentService{
+		handler,
 	}
 }
 
-func (service *PaymentService) GetPaymentTransactions(filter *Handlers.FilterHandler) ([]*Entities.TransactionEntity,error) {
+func (service *PaymentService) GetPaymentTransactions(filter *Handlers.FilterHandler) ([]*Entities.TransactionEntity, error) {
 	var transactions []*Entities.TransactionEntity
-	providers := Handlers.GetAllProviders()
-	var err error
+	providers, err := service.providerHandler.GetProvidersByFilter(filter.FilterEntity.Provider)
+
+	if err != nil {
+		return nil, err
+	}
+
 	for _, provider := range providers {
-		err = provider().ConvertToTransactionEntity(&transactions)
+		provider().ConvertToTransactionEntity(&transactions)
 	}
 	transactions = filter.FilterTransactions(transactions)
-	return  transactions , err
+	return transactions, nil
 }
-
-

@@ -9,22 +9,25 @@ type FlyARepository struct {
 	reader Infrastructures.JsonReader
 }
 
-func NewFlyARepository() *FlyARepository  {
+func NewFlyARepository() *FlyARepository {
 	return &FlyARepository{
-		reader:Infrastructures.NewJsonReader(),
+		reader: Infrastructures.NewJsonReader(),
 	}
 }
 
-func (repo *FlyARepository) GetSourceDestination () string  {
+func (repo *FlyARepository) GetSourceDestination() string {
 	return "/app/data/flypayA.json"
 }
 
-
-func (repo *FlyARepository) ConvertToTransactionEntity(transactions *[]*Entities.TransactionEntity) error {
+func (repo *FlyARepository) ConvertToTransactionEntity(transactions *[]*Entities.TransactionEntity) {
 	var flyAEntity *Entities.FlyPayAEntity
-	err :=repo.reader.ReadDataFromJsonFile(repo.GetSourceDestination(),&flyAEntity)
+	err := repo.reader.ReadDataFromJsonFile(repo.GetSourceDestination(), &flyAEntity)
 
-	for _,transaction := range flyAEntity.Transactions {
+	if err != nil {
+		panic(err)
+	}
+
+	for _, transaction := range flyAEntity.Transactions {
 		paymentEntity := &Entities.TransactionEntity{
 			transaction.TransactionId,
 			transaction.Amount,
@@ -32,7 +35,6 @@ func (repo *FlyARepository) ConvertToTransactionEntity(transactions *[]*Entities
 			transaction.OrderReference,
 			transaction.Currency,
 		}
-		*transactions = append(*transactions,paymentEntity)
+		*transactions = append(*transactions, paymentEntity)
 	}
-	return err
 }
