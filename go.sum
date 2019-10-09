@@ -1,0 +1,4 @@
+github.com/gorilla/schema v1.1.0 h1:CamqUDOFUBqzrvxuz2vEwo8+SUdwsluFh7IlzJh30LY=
+github.com/gorilla/schema v1.1.0/go.mod h1:kgLaKoK1FELgZqMAVxx/5cbj0kT+57qxUrAlIO2eleU=
+gopkg.in/matryer/respond.v1 v1.0.1 h1:Itm+IoYr5LVM7mmcjX9eHlFfRSit9eOP2MB3pUO37uw=
+gopkg.in/matryer/respond.v1 v1.0.1/go.mod h1:MSya9AiskDI8GRiRbVzi8xo5XatVW44f2jVpa87958k=
