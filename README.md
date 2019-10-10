@@ -14,11 +14,18 @@ git clone https://github.com/omarmostafa/fly-code-challenge.git
 
 Install docker compose 
 
-## Run APP and test cases
+## Run App and test cases
 
  ```bash
 docker-compose up --build
  ``` 
+
+You will see the unit test result while build the project
+
+ ## Run API 
+  ```
+ localhost:8080/api/payments/transactions
+  ``` 
  
  ## Intro
  
