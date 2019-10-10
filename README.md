@@ -1,26 +1,26 @@
 
-#Fly Code Challenge
+# Fly Code Challenge
 
 The main idea of the task is to build an API that read the payment transaction data from files (Json format) and return them in the API response as json format. There are two payment providers flypayA and flypayB.
 
-## install 
+## Install 
 Clone project 
 
 ```bash
 git clone https://github.com/omarmostafa/fly-code-challenge.git
 ``` 
 
-##Requirements
+## Requirements
 
 Install docker compose 
 
- ##Run APP and test cases
+## Run APP and test cases
 
  ```bash
 docker-compose up --build
  ``` 
  
- ##Intro
+ ## Intro
  
  Implement this API `/api/payment/transaction `
  -  list all transaction which combine transactaions from all the available provider(`flypayA` and `flypay`B)
@@ -44,7 +44,7 @@ docker-compose up --build
  Its responsible to get the data from repo and map it to transaction entity with the common schema
  
 
-##Handlers
+## Handlers
 
 Its responsible for Manage filters and providers to filter transactions and get the right provider
 
