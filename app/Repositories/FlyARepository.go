@@ -1,12 +1,12 @@
 package Repositories
 
 import (
-	"github.com/code-challenge/app/Entities"
-	"github.com/code-challenge/app/Infrastructures"
+	"github.com/fly-code-challenge/app/Entities"
+	"github.com/fly-code-challenge/app/Infrastructures"
 )
 
 type FlyARepository struct {
-	reader Infrastructures.JsonReader
+	reader Infrastructures.IJsonReader
 }
 
 func NewFlyARepository() *FlyARepository {
@@ -16,25 +16,15 @@ func NewFlyARepository() *FlyARepository {
 }
 
 func (repo *FlyARepository) GetSourceDestination() string {
-	return "/app/data/flypayA.json"
+	return "/data/flypayA.json"
 }
 
-func (repo *FlyARepository) ConvertToTransactionEntity(transactions *[]*Entities.TransactionEntity) {
+func (repo *FlyARepository) GetFlyAEntity() *Entities.FlyPayAEntity {
 	var flyAEntity *Entities.FlyPayAEntity
 	err := repo.reader.ReadDataFromJsonFile(repo.GetSourceDestination(), &flyAEntity)
 
 	if err != nil {
 		panic(err)
 	}
-
-	for _, transaction := range flyAEntity.Transactions {
-		paymentEntity := &Entities.TransactionEntity{
-			transaction.TransactionId,
-			transaction.Amount,
-			transaction.GetStatusCode(),
-			transaction.OrderReference,
-			transaction.Currency,
-		}
-		*transactions = append(*transactions, paymentEntity)
-	}
+	return flyAEntity
 }

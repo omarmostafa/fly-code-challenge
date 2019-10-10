@@ -1,7 +1,7 @@
 package Handlers
 
 import (
-	"github.com/code-challenge/app/Entities"
+	"github.com/fly-code-challenge/app/Entities"
 )
 
 type FilterHandler struct {

@@ -10,18 +10,17 @@ type IRoute interface {
 }
 
 type router struct {
-
 }
 
-func (router *router) InitRoute() *mux.Router  {
-	r:= mux.NewRouter()
+func (router *router) InitRoute() *mux.Router {
+	r := mux.NewRouter()
 	paymentController := ServiceContainer().InjectPaymentController()
-	r.HandleFunc("/payments/transactions", paymentController.GetPaymentTransactions).Methods("GET")
-	return  r
+	r.HandleFunc("/api/payments/transactions", paymentController.GetPaymentTransactions).Methods("GET")
+	return r
 }
 
 var (
-	route *router
+	route      *router
 	routerOnce sync.Once
 )
 
@@ -31,5 +30,5 @@ func NewRouter() IRoute {
 			route = &router{}
 		})
 	}
-	return  route
+	return route
 }

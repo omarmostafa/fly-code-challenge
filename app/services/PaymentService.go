@@ -1,15 +1,15 @@
 package services
 
 import (
-	"github.com/code-challenge/app/Entities"
-	"github.com/code-challenge/app/Handlers"
+	"github.com/fly-code-challenge/app/Entities"
+	"github.com/fly-code-challenge/app/Handlers"
 )
 
 type PaymentService struct {
-	providerHandler *Handlers.ProviderHandler
+	providerHandler Handlers.IProviderHandler
 }
 
-func NewPaymentService(handler *Handlers.ProviderHandler) *PaymentService {
+func NewPaymentService(handler Handlers.IProviderHandler) *PaymentService {
 	return &PaymentService{
 		handler,
 	}
@@ -24,7 +24,7 @@ func (service *PaymentService) GetPaymentTransactions(filter *Handlers.FilterHan
 	}
 
 	for _, provider := range providers {
-		provider().ConvertToTransactionEntity(&transactions)
+		provider().MapToTransactionEntity(&transactions)
 	}
 	transactions = filter.FilterTransactions(transactions)
 	return transactions, nil

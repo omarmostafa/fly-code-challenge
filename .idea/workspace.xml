@@ -2,19 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8a862bd-53e2-48a3-b621-747e40a5d054" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Errors/ValidationError.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Handlers/FilterHandler_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Handlers/IProviderHandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Handlers/Mocks/ProviderHandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Handlers/ProviderHandler_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Infrastructures/IJsonReader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Infrastructures/Mocks/JsonReader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mappers/FlyAMapper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mappers/FlyAMapper_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mappers/FlyBMapper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mappers/FlyBMapper_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mappers/ITransactionMapper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/IFlyBRepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Mocks/FlyARepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Mocks/FlyBRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ServiceContainer.go" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContainer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/FilterEntity.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/FilterEntity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entities/TransactionEntity.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/TransactionEntity.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Handlers/FilterHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Handlers/FilterHandler.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Handlers/ProviderHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Handlers/ProviderHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Infrastructures/JsonReader.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Infrastructures/JsonReader.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/FlyARepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FlyARepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/FlyBRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/FlyBRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/ITransactionRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ITransactionRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ITransactionRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/IFlyARepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PaymentController.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PaymentController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/flypayA.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/flypayA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/flypayB.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/flypayB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/IPaymentService.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/IPaymentService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/PaymentService.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/PaymentService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/route.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,22 +61,26 @@
     <property name="GO_FMT" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/services" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Handlers" />
-      <recent name="$PROJECT_DIR$/app/Entities" />
-      <recent name="$PROJECT_DIR$/app/data" />
-      <recent name="$PROJECT_DIR$/app/Repositories" />
-      <recent name="$PROJECT_DIR$/app/Providers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/services" />
+      <recent name="$PROJECT_DIR$/app/Handlers/Mocks" />
+      <recent name="$PROJECT_DIR$/app/Handlers" />
+      <recent name="$PROJECT_DIR$/app/Repositories/Mocks" />
+      <recent name="$PROJECT_DIR$/app/Mappers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -80,7 +103,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

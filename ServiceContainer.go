@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/code-challenge/app/Handlers"
-	"github.com/code-challenge/app/controllers"
-	"github.com/code-challenge/app/services"
+	"github.com/fly-code-challenge/app/Handlers"
+	"github.com/fly-code-challenge/app/controllers"
+	"github.com/fly-code-challenge/app/services"
 	"sync"
 )
 
