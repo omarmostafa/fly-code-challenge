@@ -34,3 +34,21 @@ func TestProviderHandler_GetProvidersWithInvalidProvider(t *testing.T) {
 	expected := Errors.ValidationError{"Invalid provider"}
 	assert.Equal(t, err, expected)
 }
+
+
+// Benchmarks
+func BenchmarkProviderHandler_GetProvidersByFilter(b *testing.B) {
+	providerHandler := NewProviderHandler()
+
+	for i := 0; i < b.N; i++ {
+		_,_=providerHandler.GetProvidersByFilter("")
+	}
+}
+
+func BenchmarkProviderHandler_GetAllProviders(b *testing.B) {
+	providerHandler := NewProviderHandler()
+
+	for i := 0; i < b.N; i++ {
+		_=providerHandler.GetAllProviders()
+	}
+}

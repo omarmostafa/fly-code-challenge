@@ -339,3 +339,127 @@ func TestFilterHandler_FilterCombined(t *testing.T) {
 	result := handler.Filter(transactions, handler.IsItemValid)
 	assert.Equal(t, result, filteredTransactions)
 }
+
+
+///Benchmarks
+
+func BenchmarkFilterHandler_IsMatchAmount(b *testing.B) {
+	filter := Entities.FilterEntity{
+		MinAmount:  100,
+		MaxAmount:  200,
+		Currency:   "AUD",
+		Provider:   "flyPayB",
+		StatusCode: "authorized",
+	}
+
+	handler := NewFilterHandler(filter)
+
+	for i := 0; i < b.N; i++ {
+		handler.IsMatchAmount(150)
+	}
+}
+
+func BenchmarkFilterHandler_IsMatchCurrency(b *testing.B) {
+	filter := Entities.FilterEntity{
+		MinAmount:  100,
+		MaxAmount:  200,
+		Currency:   "AUD",
+		Provider:   "flyPayB",
+		StatusCode: "authorized",
+	}
+
+	handler := NewFilterHandler(filter)
+
+	for i := 0; i < b.N; i++ {
+		handler.IsMatchCurrency("AUD")
+	}
+}
+
+func BenchmarkFilterHandler_IsMatchStatusCode(b *testing.B) {
+	filter := Entities.FilterEntity{
+		MinAmount:  100,
+		MaxAmount:  200,
+		Currency:   "AUD",
+		Provider:   "flyPayB",
+		StatusCode: "authorized",
+	}
+
+	handler := NewFilterHandler(filter)
+
+	for i := 0; i < b.N; i++ {
+		handler.IsMatchStatusCode("authorised")
+	}
+}
+
+func BenchmarkFilterHandler_IsItemValid(b *testing.B) {
+	filter := Entities.FilterEntity{
+		MinAmount:  100,
+		MaxAmount:  200,
+		Currency:   "AUD",
+		Provider:   "flyPayB",
+		StatusCode: "authorised",
+	}
+
+	handler := NewFilterHandler(filter)
+
+	item := Entities.TransactionEntity{
+		Id:             "fly 1",
+		Amount:         150,
+		StatusCode:     "authorised",
+		OrderReference: "test reference",
+		Currency:       "AUD",
+	}
+	for i := 0; i < b.N; i++ {
+		handler.IsItemValid(&item)
+	}
+}
+
+func BenchmarkFilterHandler_Filter(b *testing.B) {
+	filter := Entities.FilterEntity{
+		MinAmount:  100,
+		MaxAmount:  200,
+		Currency:   "AUD",
+		Provider:   "flyPayB",
+		StatusCode: "authorised",
+	}
+
+	handler := NewFilterHandler(filter)
+
+	var transactions = []*Entities.TransactionEntity{
+		{
+			Id:             "fly a1",
+			Amount:         150,
+			Currency:       "AUD",
+			OrderReference: "reference",
+			StatusCode:     "authorised",
+		},
+		{
+			Id:             "fly a2",
+			Amount:         170,
+			Currency:       "EGP",
+			OrderReference: "reference",
+			StatusCode:     "authorized",
+		},
+		{
+			Id:             "fly a2",
+			Amount:         300,
+			Currency:       "AUD",
+			OrderReference: "reference",
+			StatusCode:     "authorised",
+		},
+		{
+			Id:             "fly a2",
+			Amount:         150,
+			Currency:       "AUD",
+			OrderReference: "reference",
+			StatusCode:     "declined",
+		},
+	}
+	for i := 0; i < b.N; i++ {
+		handler.Filter(transactions, handler.IsItemValid)
+	}
+}
+
+
+
+

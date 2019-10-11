@@ -21,7 +21,7 @@ RUN go mod download
 COPY . .
 
 ENV CGO_ENABLED 0
-RUN go test -v ./...
+RUN go test -bench=. -v ./...
 
 # Build the Go app
 RUN go build -o main .
