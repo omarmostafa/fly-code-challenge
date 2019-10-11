@@ -14,7 +14,7 @@ git clone https://github.com/omarmostafa/fly-code-challenge.git
 
 Install docker compose 
 
-## Run App and test cases
+## Run App , test cases and benchmarks
 
  ```bash
 docker-compose up --build
